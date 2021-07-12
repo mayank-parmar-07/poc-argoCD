@@ -1,0 +1,28 @@
+{
+  "bootstrap": true,
+  "server": true,
+  "datacenter": "local",
+  "data_dir": "/tmp/consul" ,
+  "watches": [
+    {
+      "type": "service",
+      "service": "MAC-LI",
+      "handler_type": "http",
+      "http_handler_config": {
+        "path": "http://localhost:9876/v1.0/watch",
+        "method": "POST",
+        "timeout": "5s"
+      }
+    },
+    {
+      "type": "service",
+      "service": "WINDOWS-LI",
+      "handler_type": "http",
+      "http_handler_config": {
+        "path": "http://localhost:9876/v1.0/watch",
+        "method": "POST",
+        "timeout": "5s"
+      }
+    }
+  ]
+}
